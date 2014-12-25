@@ -107,7 +107,7 @@ BOOL InitInstance(HINSTANCE hInstance, int nCmdShow)
       return FALSE;
    }
 
-   HWND button = CreateWindow(L"BUTTON", L"MyButton", WS_TABSTOP | WS_VISIBLE | WS_CHILD | BS_PUSHBUTTON, 10, 10, 50, 30, hWnd, NULL, NULL, NULL);
+   HWND button = CreateWindow(L"BUTTON", L"OPEN", WS_TABSTOP | WS_VISIBLE | WS_CHILD | BS_PUSHBUTTON, 40, 40, 50, 30, hWnd, (HMENU)ID_OPEN, NULL, NULL);
 
    if (!button)
    {
@@ -146,6 +146,9 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 		{
 		case IDM_ABOUT:
 			DialogBox(hInst, MAKEINTRESOURCE(IDD_ABOUTBOX), hWnd, About);
+			break;
+		case ID_OPEN:
+			MessageBox(hWnd, L"Message", L"Message", NULL);
 			break;
 		case IDM_EXIT:
 			DestroyWindow(hWnd);
