@@ -107,6 +107,13 @@ BOOL InitInstance(HINSTANCE hInstance, int nCmdShow)
       return FALSE;
    }
 
+   HWND button = CreateWindow(L"BUTTON", L"MyButton", WS_TABSTOP | WS_VISIBLE | WS_CHILD | BS_PUSHBUTTON, 10, 10, 50, 30, hWnd, NULL, NULL, NULL);
+
+   if (!button)
+   {
+	   return FALSE;
+   }
+
    ShowWindow(hWnd, nCmdShow);
    UpdateWindow(hWnd);
 
